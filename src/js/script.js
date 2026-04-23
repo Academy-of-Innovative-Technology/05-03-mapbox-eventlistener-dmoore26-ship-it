@@ -1,6 +1,6 @@
 
-mapboxgl.accessToken = ' ACCESS TOKEN ';
 
+mapboxgl.accessToken = ' ACCESS TOKEN ';
 
 var mapProps = {
 	container: 'map',
@@ -10,8 +10,24 @@ var mapProps = {
 
 var map = new mapboxgl.Map(mapProps);
 
-map.on(" event ", function(evt){
+var clickCount = 0;
+var info = document.getElementById('info');
 
-	
-	
+map.on('click', function(evt) {
+	clickCount++;
+	var lng = evt.lngLat.lng.toFixed(5);
+	var lat = evt.lngLat.lat.toFixed(5);
+	if (info) {
+		info.value = 'Clicks: ' + clickCount + ' — ' + lng + ', ' + lat;
+	}
 });
+
+map.on('dblclick', function(evt) {
+	clickCount += 4;
+	var lng = evt.lngLat.lng.toFixed(5);
+	var lat = evt.lngLat.lat.toFixed(5);
+	if (info) {
+		info.value = 'Clicks: ' + clickCount + ' — ' + lng + ', ' + lat;
+	}
+});
+
