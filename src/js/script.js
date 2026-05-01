@@ -1,6 +1,6 @@
 
 
-mapboxgl.accessToken = ' ACCESS TOKEN ';
+mapboxgl.accessToken = 'pk.eyJ1IjoiZmxpZ2h0ZWFtc3RhbmR1cCIsImEiOiJjbThyamw3azQweW9iMmtvbWM4N3Bhc2o0In0.fywVictmDFWXM_M_LhlnQA';
 
 var mapProps = {
 	container: 'map',
@@ -30,4 +30,3 @@ map.on('dblclick', function(evt) {
 		info.value = 'Clicks: ' + clickCount + ' — ' + lng + ', ' + lat;
 	}
 });
-
